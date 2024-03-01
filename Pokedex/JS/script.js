@@ -24,6 +24,7 @@ async function contagemPokemons() {
     for (let i = 1; i <= numPokemons; i++) {
         await pokemon(pokeContainer, i);
     }
+    pokemonTypes()
 }
 
 function primeiraLetraMaiuscula(string) {
@@ -75,6 +76,13 @@ async function pokemon(pokeContainer, id) {
     h3Name.textContent = primeiraLetraMaiuscula(data.name);
     spanType.textContent = `${primeiraLetraMaiuscula(data.types[0].type.name)}`
 
+}
+
+function pokemonTypes(){ 
+    const pokeTypeElement = document.getElementsByClassName("typeColor")
+    const pokeTypes = Array.from(pokeTypeElement).map(element => element.textContent);
+    console.log(pokeTypes);
+    
 }
 
 contagemPokemons();
